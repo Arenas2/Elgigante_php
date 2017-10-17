@@ -1,0 +1,21 @@
+.row_custom { margin-right: 0px !important;  margin-left: 0px !important; }
+.div_header_back { background-color: #0B2347; height: 150px; }
+.div_menu_header_back { background-color: #373435; color: #ffffff; text-align: center; }
+
+.navbar-default { background-color: #373435; border-color: #373435; border-radius: 0px !important; }
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover { color: #ffffff; background-color: transparent; }
+.navbar-default .navbar-nav>li>a { color: #ffffff; }
+.navbar .navbar-nav { display: inline-block; float: none; }
+.navbar .navbar-collapse { text-align: center; }
+
+.div_footer_back {
+bottom: 0;
+background-color: #373435;
+color: #ffffff;
+padding-top: 40px;
+padding-bottom: 40px;
+}
+.link_white, .link_white a {
+color: #ffffff;
+text-decoration: none;
+}

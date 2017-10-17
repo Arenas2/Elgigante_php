@@ -1,0 +1,9 @@
+body {
+padding-top: 70px;
+}
+.navbar-brand {
+padding: 10px 15px;
+}
+.no_under{
+text-decoration: none !important;
+}

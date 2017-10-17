@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Acceso restringido"
+AuthUserFile "/home/markcpmp/.htpasswds/public_html/clientes/elgigantedelosazulejosgrupo100/_a_d_m_i_n_/passwd"
+require valid-user

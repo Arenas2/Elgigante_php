@@ -1,0 +1,60 @@
+Options -Multiviews
+#AddType application/x-httpd-php5 .fresh
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^pagina/([A-z0-9\-]+)$ /Pagina.php?id=$1 [QSA]
+RewriteRule ^pagina/([A-z0-9\-]+)/$ /Pagina.php?id=$1 [QSA]
+
+RewriteRule ^cat/([A-z0-9\-]+)$ /index.php?slug=$1 [QSA]
+RewriteRule ^cat/([A-z0-9\-]+)/$ /index.php?slug=$1 [QSA]
+
+RewriteRule ^realiza_pedido/([A-z0-9\-]+)$ /Realiza_Pedido.php?id_pedido=$1 [QSA]
+RewriteRule ^realiza_pedido/([A-z0-9\-]+)/$ /Realiza_Pedido.php?id_pedido=$1 [QSA]
+
+RewriteRule ^pagar/([A-z0-9\-]+)$ /Pagar.php?id_pedido=$1 [QSA]
+RewriteRule ^pagar/([A-z0-9\-]+)/$ /Pagar.php?id_pedido=$1 [QSA]
+
+RewriteRule ^pago_verif/([A-z0-9\-]+)$ /Pago.Verif.php?id_pedido=$1 [QSA]
+RewriteRule ^pago_verif/([A-z0-9\-]+)/$ /Pago.Verif.php?id_pedido=$1 [QSA]
+
+RewriteRule ^ver_pedido/([A-z0-9\-]+)$ /VerPedido.php?id_pedido=$1 [QSA]
+RewriteRule ^ver_pedido/([A-z0-9\-]+)/$ /VerPedido.php?id_pedido=$1 [QSA]
+
+RewriteRule ^cerrar_sesion$ /cerrar_sesion.php [QSA]
+RewriteRule ^cerrar_sesion/$ /cerrar_sesion.php [QSA]
+
+RewriteRule ^Carrito$ /Carrito.php [QSA]
+RewriteRule ^Carrito/$ /Carrito.php [QSA]
+RewriteRule ^Carrito/([A-z0-9\-]+)$ /Carrito.php?id_pedido=$1 [QSA]
+RewriteRule ^Carrito/([A-z0-9\-]+)/$ /Carrito.php?id_pedido=$1 [QSA]
+
+RewriteRule ^MiCuenta/([A-z0-9\-]+)$ /MiCuenta.php?u=$1 [QSA]
+RewriteRule ^MiCuenta/([A-z0-9\-]+)/$ /MiCuenta.php?u=$1 [QSA]
+RewriteRule ^MiCuenta$ /MiCuenta.php [QSA]
+RewriteRule ^MiCuenta/$ /MiCuenta.php [QSA]
+
+RewriteRule ^prod/([A-z0-9\-]+)$ /Producto.php?id_prod=$1 [QSA]
+RewriteRule ^prod/([A-z0-9\-]+)/$ /Producto.php?id_prod=$1 [QSA]
+RewriteRule ^prod/([A-z0-9\-]+)/([A-z0-9\-]+)$ /Producto.php?id_prod=$1 [QSA]
+RewriteRule ^prod/([A-z0-9\-]+)/([A-z0-9\-]+)/$ /Producto.php?id_prod=$1 [QSA]
+
+RewriteRule ^ver/([A-z0-9\-]+)$ /index.php?ver=$1 [QSA]
+RewriteRule ^ver/([A-z0-9\-]+)/$ /index.php?ver=$1 [QSA]
+RewriteRule ^ver/([A-z0-9\-]+)/(.*)$ /index.php?ver=$1&ver2=$2 [QSA]
+RewriteRule ^ver/([A-z0-9\-]+)/(.*)/$ /index.php?ver=$1&ver2=$2 [QSA]
+
+RewriteRule ^compress_img/([A-z0-9\-]+)/([A-z0-9\-]+)/(.*)$ /compress.php?img=$1/$2/$3 [QSA]
+RewriteRule ^compress_img_ext$ /compress.php [QSA]
+RewriteRule ^img_([A-z0-9\-]+)/([A-z0-9\-]+)/$ /lib/index.php?cosa=$1&id_cosa=$2 [QSA]
+RewriteRule ^img_([A-z0-9\-]+)/([A-z0-9\-]+)$ /lib/index.php?cosa=$1&id_cosa=$2 [QSA]
+RewriteRule ^img_adjunta/([A-z0-9\-]+)/([A-z0-9\-]+)/(.*)$ /lib/files/$1/$2/$3 [QSA]
+
+# ErrorDocument 404 /secciones.php?ver=404
+ErrorDocument 404 /404.php
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
